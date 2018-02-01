@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.phhagens.sumcalculator_itc162_classproject2.SumCalculator_itc162_classproject2_MainActivity">
+
+    <TextView
+        android:id="@+id/labelNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="75dp"
+        android:text="1st Name"
+        app:layout_constraintBottom_toTopOf="@+id/labelNumber2"
+        app:layout_constraintEnd_toStartOf="@+id/inputNumber1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="343dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginStart="32dp"
+        android:text="2nd Number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/inputNumber2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelNumber1" />
+
+    <EditText
+        android:id="@+id/inputNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="62dp"
+        android:ems="10"
+        android:hint="Enter a  Number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/inputNumber2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labelNumber1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Enter another Number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/clickButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labelNumber2"
+        app:layout_constraintTop_toBottomOf="@+id/inputNumber1" />
+
+    <Button
+        android:id="@+id/clickButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:layout_marginStart="32dp"
+        android:text="GetSum"
+        app:layout_constraintBottom_toTopOf="@+id/showAnswer"
+        app:layout_constraintStart_toEndOf="@+id/labelNumber2"
+        app:layout_constraintTop_toBottomOf="@+id/inputNumber2" />
+
+    <TextView
+        android:id="@+id/showAnswer"
+        android:layout_width="101dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="156dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clickButton" />
+</android.support.constraint.ConstraintLayout>
