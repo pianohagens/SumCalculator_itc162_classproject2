@@ -19,6 +19,7 @@ implements View.OnClickListener {
     private EditText inputNumber2;
     private TextView showAnswer;
     private Button clickButton;
+    private Button resetBtn;
 
     //define the shared pref object
     private SharedPreferences saveInputs;
@@ -34,10 +35,11 @@ implements View.OnClickListener {
         setContentView(R.layout.activity_sum_calculator_itc162_classproject2__main);
 
         //get reference to the widgets
-        inputNumber1 = (EditText) findViewById(R.id.inputNumber1);
-        inputNumber2 = (EditText) findViewById(R.id.inputNumber2);
+        inputNumber1 = (EditText)findViewById(R.id.inputNumber1);
+        inputNumber2 = (EditText)findViewById(R.id.inputNumber2);
         clickButton = (Button)findViewById(R.id.clickButton);
-        showAnswer = (TextView) findViewById(R.id.showAnswer);
+        showAnswer = (TextView)findViewById(R.id.showAnswer);
+        resetBtn = (Button)findViewById(R.id.resetBtn);
 
         //set the listener
         clickButton.setOnClickListener((View.OnClickListener) this);
@@ -56,6 +58,12 @@ implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         calculateAndShow();
+    }
+    //for the reset Button
+    public void Clear(View clear){
+        inputNumber1.setText("");
+        inputNumber2.setText("");
+        showAnswer.setText("");
     }
 
 }
