@@ -1,6 +1,7 @@
 package com.example.phhagens.sumcalculator_itc162_classproject2;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +12,7 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
-public class SumCalculator_itc162_classproject2_MainActivity extends AppCompatActivity
-implements View.OnClickListener {
+public class SumCalculator_itc162_classproject2_MainActivity extends AppCompatActivity{
 
     //define variable for the widgets
     private EditText inputNumber1;
@@ -25,8 +25,8 @@ implements View.OnClickListener {
     private SharedPreferences saveInputs;
 
     //define variables to be saved
-    private float num1 = .0f;
-    private float num2 = .0f;
+    private int num1 = 0;
+    private int num2 = 0;
 
     @SuppressLint("WrongConstant")
     @Override
@@ -42,23 +42,57 @@ implements View.OnClickListener {
         resetBtn = (Button)findViewById(R.id.resetBtn);
 
         //set the listener
-        clickButton.setOnClickListener((View.OnClickListener) this);
+       //02/07/2018 clickButton.setOnClickListener((View.OnClickListener) this);
 
         //get SharePreferences object
         saveInputs = getSharedPreferences("saveInputs", MODE_PRIVATE);
     }
+    /*02/07/2018
     public void calculateAndShow(){
         //turn string to float
         num1 = Float.parseFloat(inputNumber1.getText().toString());
         num2 = Float.parseFloat(inputNumber2.getText().toString());
         float add = num1 + num2;
         showAnswer.setText(String.valueOf(add));
+    }*/
+
+    //02/07/2018@Override
+    //02/07/2018public void onClick(View view) {
+    //02/07/2018calculateAndShow();
+    //02/07/2018}
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        //save the instance variable
+        SharedPreferences.Editor editor = saveInputs.edit();
+        editor.putInt("num1", num1);
+        editor.putInt("num2", num2);
+        editor.commit();
     }
 
     @Override
-    public void onClick(View view) {
-        calculateAndShow();
+    public void onResume(){
+        super.onResume();
+        //get the instance variable
+        num1 = saveInputs.getInt("num1",num1);
+        num2 = saveInputs.getInt("num2",num2);
+
     }
+
+    public void sendMessage(View View){
+        //set an intent that you are going to invoke the second activity from the first activity 02/07/2018
+        Intent intent = new Intent(SumCalculator_itc162_classproject2_MainActivity.this, itc162_classProject2_2nd_MainActivity.class);
+        //get values for the numbers to be added
+        num1 = Integer.parseInt(inputNumber1.getText().toString());
+        num2 = Integer.parseInt(inputNumber2.getText().toString());
+
+        intent.putExtra("num1", num1);
+        intent.putExtra("num2", num2);
+
+        startActivity(intent);
+    }
+
     //for the reset Button
     public void Clear(View clear){
         inputNumber1.setText("");

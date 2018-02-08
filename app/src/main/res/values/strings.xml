@@ -8,4 +8,5 @@
     <string name="clickGetSum">Sum</string>
     <string name="showAnswer"></string>
     <string name="reset">Reset</string>
+    <string name="result">Result</string>
 </resources>

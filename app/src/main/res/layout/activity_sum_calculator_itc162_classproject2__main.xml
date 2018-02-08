@@ -94,6 +94,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="86dp"
         android:backgroundTint="@android:color/holo_blue_dark"
+        android:onClick="sendMessage"
         android:text="@string/clickGetSum"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/resetBtn"
