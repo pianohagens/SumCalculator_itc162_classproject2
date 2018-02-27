@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SumCalculator_itc162_classproject2</string>
     <string name="projectTitle">Class Project 2_Sum</string>
+    <string name="topicTitle">Handle Events</string>
     <string name="label_1st_number">1st Number</string>
     <string name="label_2nd_number">2nd Number</string>
     <string name="input_1st_number">Enter A Number</string>
